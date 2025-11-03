@@ -1,109 +1,193 @@
+/* ===============================
+   SISTEMA DE ASSINATURAS DIGITAIS
+   Prefeitura Municipal de Barra dos Coqueiros
+   Layout institucional moderno
+   =============================== */
+
+:root {
+  --azul-prefeitura: #003366;
+  --amarelo-destaque: #ffcc33;
+  --cinza-fundo: #f4f6f8;
+  --cinza-texto: #555;
+  --branco: #fff;
+  --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --transicao: all 0.3s ease;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--cinza-fundo);
+  color: var(--cinza-texto);
   margin: 0;
-  background: #f7f9fc;
-  color: #333;
+  padding: 0;
 }
 
-header.site-header {
-  background: #004b8d;
-  color: white;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+/* ===================== HEADER ===================== */
 
-.header-inner {
+header {
+  background: var(--azul-prefeitura);
+  color: var(--branco);
+  padding: 20px 40px;
   display: flex;
   align-items: center;
-  justify-content: start;
-  gap: 20px;
+  box-shadow: var(--sombra);
 }
 
-.logo {
-  height: 70px;
+header img.logo {
+  width: 70px;
+  height: auto;
+  margin-right: 20px;
 }
 
-.titles h1 {
-  font-size: 1.6rem;
-  margin: 0;
+header .titles {
+  display: flex;
+  flex-direction: column;
 }
 
-.titles p {
-  font-size: 1rem;
+header .titles .product {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+header .titles .subtitle {
+  font-size: 0.95em;
   opacity: 0.9;
 }
 
-.container {
+/* ===================== CONTEÚDO ===================== */
+
+main {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px;
 }
 
 .card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 24px;
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.card h2, .card h3 {
+  color: var(--azul-prefeitura);
+  margin-top: 0;
 }
 
 label {
   display: block;
-  margin-top: 10px;
-  font-weight: 600;
+  margin-top: 14px;
+  font-weight: 500;
 }
 
-input, textarea, select {
+input, select, textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 4px;
+  margin-top: 6px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: var(--transicao);
 }
 
-textarea {
-  height: 80px;
-  resize: vertical;
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--azul-prefeitura);
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15);
 }
+
+.preview {
+  margin-top: 20px;
+  padding: 14px;
+  text-align: center;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 1.2em;
+  color: var(--azul-prefeitura);
+}
+
+/* ===================== BOTÕES ===================== */
 
 .btn {
-  background: #004b8d;
-  color: white;
+  background: var(--azul-prefeitura);
+  color: var(--branco);
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 18px;
   cursor: pointer;
-  margin-top: 12px;
+  font-weight: 500;
+  transition: var(--transicao);
 }
 
 .btn:hover {
-  background: #003970;
+  background: #00244d;
 }
 
-.btn.primary {
-  background: #0072ce;
+.btn.ghost {
+  background: transparent;
+  color: var(--azul-prefeitura);
+  border: 1px solid var(--azul-prefeitura);
 }
 
-.btn.primary:hover {
-  background: #005fa3;
+.btn.ghost:hover {
+  background: var(--azul-prefeitura);
+  color: var(--branco);
 }
 
-.site-footer {
-  text-align: center;
-  padding: 20px;
-  background: #f0f3f7;
-  color: #555;
-  font-size: 0.9rem;
-  margin-top: 40px;
-  border-top: 1px solid #ddd;
+/* ===================== TABELA ===================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
 }
 
-.resultado {
-  margin-top: 15px;
-  background: #eaf4ff;
+.table th, .table td {
   padding: 10px;
-  border-radius: 6px;
-  display: none;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background: var(--azul-prefeitura);
+  color: var(--branco);
+}
+
+.table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ===================== FOOTER ===================== */
+
+footer {
+  text-align: center;
+  background: var(--azul-prefeitura);
+  color: var(--branco);
+  padding: 16px;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* ===================== RESPONSIVO ===================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header img.logo {
+    margin-bottom: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
 }
