@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Visualizar Assinatura — Sistema de Assinaturas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Caveat&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Parisienne&family=Satisfy&family=Shadows+Into+Light&family=Tangerine&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <img src="img/logo-prefeitura.png" alt="Logo Prefeitura" />
+      <div class="titles">
+        <div class="title">Sistema de Assinaturas Digitais</div>
+        <div class="subtitle">Prefeitura Municipal de Barra dos Coqueiros — SE</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" style="max-width:900px">
+      <h2>Visualizar assinatura</h2>
+      <div class="muted">Digite o CPF e veja a assinatura salva.</div>
+
+      <label for="cpfView">CPF</label>
+      <input id="cpfView" placeholder="000.000.000-00" />
+
+      <div style="margin-top:12px" class="controls">
+        <button id="viewBtn" class="btn">Buscar</button>
+      </div>
+
+      <div id="viewResult" class="result-box" style="display:none"></div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

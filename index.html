@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sistema de Assinaturas — Prefeitura Municipal</title>
-  <link rel="icon" href="img/favicon.png" />
+  <title>Sistema de Assinaturas Digitais — Prefeitura Municipal</title>
+  <link rel="icon" href="img/logo-prefeitura.png" />
+  <!-- Google Fonts for signature styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Caveat&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Parisienne&family=Satisfy&family=Shadows+Into+Light&family=Tangerine&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="header">
     <div class="header-inner">
-      <img src="img/logo.png" alt="Logo Prefeitura" class="logo" />
+      <img src="img/logo-prefeitura.png" alt="Logo Prefeitura" />
       <div class="titles">
-        <h1>Sistema de Assinaturas Digitais</h1>
-        <p>Prefeitura Municipal de Barra dos Coqueiros — SE</p>
+        <div class="title">Sistema de Assinaturas Digitais</div>
+        <div class="subtitle">Prefeitura Municipal de Barra dos Coqueiros — SE</div>
       </div>
     </div>
   </header>
 
   <main class="container">
     <section class="card">
-      <h2>Passo A — Cadastro Inicial</h2>
-      <p class="muted">Cada servidor cadastra sua assinatura uma única vez.</p>
+      <h2>Passo A — Cadastro de Assinatura</h2>
+      <div class="muted">Cadastre sua assinatura — escolha o estilo e veja a prévia.</div>
 
       <label for="nome">Nome completo</label>
       <input id="nome" placeholder="Ex: João da Silva" />
@@ -29,35 +31,48 @@
       <label for="cpf">CPF (ex.: 000.000.000-00)</label>
       <input id="cpf" placeholder="000.000.000-00" />
 
-      <label for="cargo">Cargo</label>
-      <input id="cargo" placeholder="Ex: Diretor de TI" />
+      <label for="assinatura">Texto da assinatura</label>
+      <input id="assinatura" placeholder="Digite sua assinatura..." />
 
-      <label for="assinatura">Assinatura (digite abaixo)</label>
-      <textarea id="assinatura" placeholder="Digite sua assinatura..."></textarea>
+      <label for="estilo">Estilo da assinatura</label>
+      <select id="estilo">
+        <option value="sig-1">Dancing Script</option>
+        <option value="sig-2">Great Vibes</option>
+        <option value="sig-3">Pacifico</option>
+        <option value="sig-4">Satisfy</option>
+        <option value="sig-5">Caveat</option>
+        <option value="sig-6">Allura</option>
+        <option value="sig-7">Parisienne</option>
+        <option value="sig-8">Shadows Into Light</option>
+        <option value="sig-9">Alex Brush</option>
+        <option value="sig-10">Tangerine</option>
+      </select>
+
+      <div class="preview" id="preview">Pré-visualização da assinatura</div>
 
       <div class="controls">
-        <button id="salvar" class="btn primary">Salvar Assinatura</button>
+        <button id="saveBtn" class="btn">Salvar Assinatura</button>
+        <button id="clearBtn" class="btn ghost">Apagar perfis</button>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Passo B — Visualizar Assinatura</h2>
-      <p class="muted">Recupere sua assinatura cadastrada.</p>
+    <aside class="card">
+      <h2>Passo B — Visualizar / Confirmar</h2>
+      <div class="muted">Insira o CPF para carregar a assinatura e confirmar entrega.</div>
 
-      <label for="cpfBusca">CPF</label>
-      <input id="cpfBusca" placeholder="000.000.000-00" />
+      <label for="cpfConfirm">CPF</label>
+      <input id="cpfConfirm" placeholder="000.000.000-00" />
 
       <div class="controls">
-        <button id="buscar" class="btn">Buscar Assinatura</button>
+        <button id="loadBtn" class="btn">Buscar assinatura</button>
       </div>
 
-      <div id="resultado" class="resultado"></div>
-    </section>
+      <div id="loadedInfo" class="result-box" style="display:none"></div>
+      <div id="confirmArea" style="display:none; margin-top:12px">
+        <button id="confirmBtn" class="btn">Confirmar recebimento</button>
+      </div>
+    </aside>
   </main>
-
-  <footer class="site-footer">
-    © 2025 Prefeitura Municipal de Barra dos Coqueiros — Desenvolvido por AlphaCore
-  </footer>
 
   <script src="js/script.js"></script>
 </body>
